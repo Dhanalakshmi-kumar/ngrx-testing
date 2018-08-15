@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
-import * as ActionTypes from './../actions/counter.actions';
+import * as counterActions from './../actions/counter.actions';
 
 
 @Component({
@@ -32,7 +32,7 @@ export class CounterComponent implements OnInit {
   onAddCount(counter?: number) {
     console.log(counter);
     this.store.dispatch({
-      type: ActionTypes.INCREMENT_COUNT,
+      type: counterActions.INCREMENT_COUNT,
       payload: counter
     });
   }
@@ -40,7 +40,7 @@ export class CounterComponent implements OnInit {
   onDecrementCount(counter?: number) {
     console.log(counter);
     this.store.dispatch({
-      type: ActionTypes.DECREMENT_COUNT,
+      type: counterActions.DECREMENT_COUNT,
       payload: counter
     });
   }
